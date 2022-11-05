@@ -1,7 +1,7 @@
-import Robots from "../../../types";
+import Robot from "../../../types";
 
-interface robotsState {
-  list: Robots[];
+interface RobotsState {
+  list: Robot[];
 }
 
-export default robotsState;
+export default RobotsState;

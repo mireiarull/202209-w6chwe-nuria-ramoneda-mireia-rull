@@ -1,6 +1,6 @@
-import Robots from "../types";
+import Robot from "../types";
 
-const mockRobotsList: Robots[] = [
+const mockRobotsList: Robot[] = [
   {
     name: "wall-e",
     image: "image.jpg",
