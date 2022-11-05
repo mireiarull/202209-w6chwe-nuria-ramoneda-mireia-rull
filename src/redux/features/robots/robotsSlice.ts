@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Robot from "../../../types.js";
+import { Robot } from "../../../types.js";
+
 import RobotsState from "./types.js";
 
 const robotsInitialState: RobotsState = {
@@ -15,7 +16,7 @@ const robotsSlice = createSlice({
       action: PayloadAction<Robot[]>
     ): RobotsState => ({
       ...currentRobotsState,
-      list: action.payload,
+      list: [...action.payload],
     }),
   },
 });
