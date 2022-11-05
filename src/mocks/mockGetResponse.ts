@@ -1,9 +1,9 @@
 import { Robot } from "../types";
 
-const mockRobotsList: Robot[] = [
+const mockGetResponse: Robot[] = [
   {
-    name: "wall-e",
-    image: "image.jpg",
+    name: "Robot 1",
+    image: "",
     features: {
       speed: 1,
       endurance: 1,
@@ -11,8 +11,8 @@ const mockRobotsList: Robot[] = [
     },
   },
   {
-    name: "R2D2",
-    image: "image.jpg",
+    name: "Robot 2",
+    image: "",
     features: {
       speed: 2,
       endurance: 2,
@@ -21,4 +21,4 @@ const mockRobotsList: Robot[] = [
   },
 ];
 
-export default mockRobotsList;
+export default mockGetResponse;

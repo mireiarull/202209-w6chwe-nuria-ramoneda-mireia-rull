@@ -1,4 +1,4 @@
-interface Robot {
+export interface Robot {
   name: string;
   image: string;
   features: {
@@ -8,4 +8,6 @@ interface Robot {
   };
 }
 
-export default Robot;
+export interface ApiRobot {
+  robots: Robot[];
+}

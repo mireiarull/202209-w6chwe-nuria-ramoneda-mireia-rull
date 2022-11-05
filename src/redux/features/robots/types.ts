@@ -1,4 +1,4 @@
-import Robot from "../../../types";
+import { Robot } from "../../../types";
 
 interface RobotsState {
   list: Robot[];

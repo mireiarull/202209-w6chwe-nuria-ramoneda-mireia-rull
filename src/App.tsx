@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import useApi from "./hooks/useApi";
 
 const App = () => {
-  const { loadRobots } = useApi();
+  const { loadRobotsApi } = useApi();
 
   useEffect(() => {
-    loadRobots();
+    loadRobotsApi();
   });
 
   return <p>Robots</p>;
