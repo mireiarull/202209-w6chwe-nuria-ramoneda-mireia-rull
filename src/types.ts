@@ -7,7 +7,3 @@ export interface Robot {
     creationDate: number;
   };
 }
-
-export interface ApiRobot {
-  robots: Robot[];
-}
