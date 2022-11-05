@@ -4,3 +4,8 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+
+#root {
+  margin: 0 auto;
+  padding: 20px;
+}

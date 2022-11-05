@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import RobotsList from "./components/RobotsList/RobotsList";
 import useApi from "./hooks/useApi";
 
 const App = () => {
@@ -8,7 +9,12 @@ const App = () => {
     loadRobotsApi();
   });
 
-  return <p>Robots</p>;
+  return (
+    <>
+      <h1>Robots</h1>
+      <RobotsList />
+    </>
+  );
 };
 
 export default App;
