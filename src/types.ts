@@ -1,4 +1,4 @@
-interface Robots {
+interface Robot {
   name: string;
   image: string;
   features: {
@@ -8,4 +8,4 @@ interface Robots {
   };
 }
 
-export default Robots;
+export default Robot;
