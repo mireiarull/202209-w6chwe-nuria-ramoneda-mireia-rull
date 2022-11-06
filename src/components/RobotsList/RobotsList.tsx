@@ -6,15 +6,14 @@ const RobotsList = (): JSX.Element => {
   const robots = useAppSelector(({ robots: Robots }) => Robots.list);
 
   return (
-    <>
-      <RobotsListStyled>
-        {robots.map((robot) => (
-          <li key={robot._id}>
-            <RobotCard robot={robot} />
-          </li>
-        ))}
-      </RobotsListStyled>
-    </>
+    <RobotsListStyled>
+      <h2>Robots list</h2>
+      {robots.map((robot) => (
+        <li key={robot._id}>
+          <RobotCard robot={robot} />
+        </li>
+      ))}
+    </RobotsListStyled>
   );
 };
 

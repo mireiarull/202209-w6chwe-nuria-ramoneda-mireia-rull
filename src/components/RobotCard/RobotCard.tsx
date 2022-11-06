@@ -15,7 +15,7 @@ const RobotCard = ({ robot: robotObject }: RobotCardProps): JSX.Element => {
 
   return (
     <RobotCardStyled className="robot">
-      <h2 className="robot__name">{name}</h2>
+      <h3 className="robot__name">{name}</h3>
       <div className="robot__inner">
         <img src={image} alt={name} />
 
