@@ -2,7 +2,6 @@ import { renderHook } from "@testing-library/react";
 import { store } from "../redux/store";
 import ProviderWrapper from "../test-utils/ProviderWrapper";
 import useApi from "./useApi";
-import { Robot } from "../types";
 import { mockOneRobot } from "../mocks/mockRobots";
 
 const dispatchSpy = jest.spyOn(store, "dispatch");
