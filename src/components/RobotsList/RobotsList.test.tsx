@@ -6,35 +6,22 @@ import RobotsList from "./RobotsList";
 
 describe("Given a RobotsList component", () => {
   describe("When it's rendered with a list of robots in the store", () => {
-    test("Then it should show a heading level 2 with the text 'Robots list'", () => {
-      const expectedHeadingText = "Robots list";
-      const expectedLevel = 2;
-
-      renderWithProviders(<RobotsList />);
-
-      const renderedHeadingLevel = screen.queryByRole("heading", {
-        level: expectedLevel,
-        name: expectedHeadingText,
-      });
-
-      expect(renderedHeadingLevel).toBeInTheDocument();
-    });
-
-    test("Then it should show a list with 2 robot cards", () => {
+    test("Then it should show a list with 2 robot cards with level 3 headings with the robot's name inside", () => {
       const robotsList = mockRobotsList;
-      const [r1, r2] = robotsList;
+      const [robot1, robot2] = robotsList;
+      const expectedLevel = 3;
 
       renderWithProviders(<RobotsList />, {
         preloadedState: { robots: mockRobotsState },
       });
 
       const renderedRobot1 = screen.queryByRole("heading", {
-        level: 3,
-        name: r1.name,
+        level: expectedLevel,
+        name: robot1.name,
       });
       const renderedRobot2 = screen.queryByRole("heading", {
-        level: 3,
-        name: r2.name,
+        level: expectedLevel,
+        name: robot2.name,
       });
 
       expect(renderedRobot1).toBeInTheDocument();
