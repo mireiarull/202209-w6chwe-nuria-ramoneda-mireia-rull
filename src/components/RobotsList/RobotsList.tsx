@@ -1,18 +1,19 @@
 import { useAppSelector } from "../../redux/hooks";
 import RobotCard from "../RobotCard/RobotCard";
+import RobotsListStyled from "./RobotsListStyled";
 
 const RobotsList = (): JSX.Element => {
   const robots = useAppSelector(({ robots: Robots }) => Robots.list);
 
   return (
     <>
-      <ul>
+      <RobotsListStyled>
         {robots.map((robot) => (
           <li>
             <RobotCard robot={robot} />
           </li>
         ))}
-      </ul>
+      </RobotsListStyled>
     </>
   );
 };
