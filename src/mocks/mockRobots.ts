@@ -2,6 +2,7 @@ import { Robot } from "../types";
 
 export const mockRobotsList: Robot[] = [
   {
+    _id: "",
     name: "wall-e",
     image: "image.jpg",
     features: {
@@ -11,6 +12,7 @@ export const mockRobotsList: Robot[] = [
     },
   },
   {
+    _id: "",
     name: "R2D2",
     image: "image.jpg",
     features: {
@@ -22,6 +24,7 @@ export const mockRobotsList: Robot[] = [
 ];
 
 export const mockOneRobot: Robot = {
+  _id: "",
   name: "wall-e",
   image: "image.jpg",
   features: {
