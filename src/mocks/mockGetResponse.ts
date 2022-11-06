@@ -2,6 +2,7 @@ import { Robot } from "../types";
 
 const mockGetResponse: Robot[] = [
   {
+    _id: "",
     name: "Robot 1",
     image: "",
     features: {
@@ -11,6 +12,7 @@ const mockGetResponse: Robot[] = [
     },
   },
   {
+    _id: "",
     name: "Robot 2",
     image: "",
     features: {
