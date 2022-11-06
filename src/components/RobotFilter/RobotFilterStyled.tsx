@@ -18,6 +18,8 @@ export const RobotFilterStyled = styled.form`
 
   input {
     border: none;
+    color: ${(props) => props.theme.colorPrimary};
+    font-weight: 400;
     border-bottom: 1px solid white;
     padding: 0 10px;
     width: 100%;
