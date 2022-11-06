@@ -37,10 +37,10 @@ const useApi = () => {
           body: JSON.stringify({
             name: robot.name,
             image: robot.image,
-            feature: {
+            features: {
               speed: robot.features.speed,
               endurance: robot.features.endurance,
-              creationDate: robot.features.creationDate,
+              creationDate: robot.features.creationDate.replaceAll("-", ""),
             },
           }),
           headers: {
@@ -52,7 +52,9 @@ const useApi = () => {
           throw new Error();
         }
 
-        dispatch(createOneRobotActionCreator(robot));
+        const newRobot = await response.json();
+
+        dispatch(createOneRobotActionCreator(newRobot));
       } catch (error: unknown) {
         throw new Error(`There was an error: ${(error as Error).message}`);
       }

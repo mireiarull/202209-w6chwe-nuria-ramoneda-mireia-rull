@@ -5,14 +5,14 @@ interface RobotCardProps {
   robot: Robot;
 }
 
-const RobotCard = ({ robot: robotObject }: RobotCardProps): JSX.Element => {
-  const {
+const RobotCard = ({
+  robot: {
     _id,
     name,
     image,
     features: { speed, endurance, creationDate },
-  } = robotObject;
-
+  },
+}: RobotCardProps): JSX.Element => {
   return (
     <RobotCardStyled className="robot">
       <h3 className="robot__name">{name}</h3>
