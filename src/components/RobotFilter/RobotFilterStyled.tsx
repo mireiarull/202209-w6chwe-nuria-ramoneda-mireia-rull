@@ -24,18 +24,9 @@ export const RobotFilterStyled = styled.form`
     &:focus {
       outline: none;
     }
-  }
-
-  input::placeholder {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  button {
-    background-color: #6b559c;
-    color: white;
-    border: none;
-    font-size: 1.25rem;
-    margin: 10px;
+    &::placeholder {
+      text-align: center;
+      font-size: 1rem;
+    }
   }
 `;

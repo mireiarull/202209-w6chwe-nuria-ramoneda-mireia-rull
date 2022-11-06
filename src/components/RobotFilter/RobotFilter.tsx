@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useApi from "../../hooks/useApi";
+import Button from "../Button/Button";
 import { RobotFilterStyled } from "./RobotFilterStyled";
 
 const RobotFilter = (): JSX.Element => {
@@ -33,7 +34,7 @@ const RobotFilter = (): JSX.Element => {
           onChange={handleFormChange}
           autoComplete="off"
         />
-        <button type="submit">send</button>
+        <Button text="send" action={() => {}}></Button>
       </RobotFilterStyled>
     </>
   );
