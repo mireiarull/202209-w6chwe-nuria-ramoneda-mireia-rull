@@ -1,5 +1,6 @@
 import { mockOneRobot, mockRobotsList } from "../../../mocks/mockRobots";
 import {
+  createOneRobotActionCreator,
   loadOneRobotActionCreator,
   loadRobotsActionCreator,
   robotsReducer,
@@ -49,6 +50,23 @@ describe("Given a function robotsReducer", () => {
       const newRobotsState = robotsReducer(
         currentEmptyState,
         loadOneRobotAction
+      );
+      const expectedRobotsState = { list: [mockOneRobot] };
+
+      expect(newRobotsState).toStrictEqual(expectedRobotsState);
+    });
+  });
+
+  describe("When the createOneRobotActionCreatot is invoked with a current empty state and a new one robot", () => {
+    test("Then it should return a new state with the current state plus the new robot", () => {
+      const currentEmptyState = {
+        list: [],
+      };
+      const createOneRobotAction = createOneRobotActionCreator(mockOneRobot);
+
+      const newRobotsState = robotsReducer(
+        currentEmptyState,
+        createOneRobotAction
       );
       const expectedRobotsState = { list: [mockOneRobot] };
 

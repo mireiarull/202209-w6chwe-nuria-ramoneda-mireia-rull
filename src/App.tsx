@@ -13,12 +13,13 @@ const App = () => {
   });
 
   return (
-    <>
+    <main>
       <Header />
+      <h2>Robots list</h2>
       <RobotFilter />
       <RobotsList />
       <RobotForm />
-    </>
+    </main>
   );
 };
 
