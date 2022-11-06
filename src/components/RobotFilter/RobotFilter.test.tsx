@@ -13,11 +13,11 @@ jest.mock("../../redux/hooks", () => ({
 }));
 
 describe("Given a RobotFilter component", () => {
-  const expectedLabel = "Find robot by its ID";
+  const expectedLabel = "Find a robot by its ID";
   const expectedButtonText = "send";
 
   describe("Whn it's rendered", () => {
-    test("Then it should show a label with 'Find robot by its ID' and a submit button", () => {
+    test("Then it should show a label with 'Find a robot by its ID' and a submit button", () => {
       renderWithProviders(<RobotFilter />);
 
       const renderedLabel = screen.queryByRole("textbox", {
