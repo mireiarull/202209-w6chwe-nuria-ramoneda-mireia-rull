@@ -2,9 +2,12 @@ import { useState } from "react";
 import useApi from "../../hooks/useApi";
 import { Robot } from "../../types";
 import Button from "../Button/Button";
+import RobotFormStyled from "./RobotFormStyled";
+import { useNavigate } from "react-router-dom";
 
 const RobotForm = (): JSX.Element => {
   const { createOneRobotApi } = useApi();
+  const navigate = useNavigate();
 
   const intialFormData = {
     name: "",
@@ -42,11 +45,12 @@ const RobotForm = (): JSX.Element => {
       },
     };
     createOneRobotApi(formDataToSubmit as Robot);
+    navigate("/home");
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <RobotFormStyled onSubmit={(event) => handleSubmit(event)}>
         <div className="form__item">
           <label className="form__label" htmlFor="name">
             Name
@@ -115,7 +119,7 @@ const RobotForm = (): JSX.Element => {
         </div>
 
         <Button text="send" action={() => {}}></Button>
-      </form>
+      </RobotFormStyled>
     </>
   );
 };
