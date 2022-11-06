@@ -18,6 +18,13 @@ const handlers = [
       return response(context.status(200), context.json(mockOneRobot));
     }
   ),
+
+  rest.delete(
+    `${robotsApiUrl}/robots/delete`,
+    async (request, response, context) => {
+      return response(context.status(200), context.json(mockOneRobot));
+    }
+  ),
 ];
 
 export default handlers;

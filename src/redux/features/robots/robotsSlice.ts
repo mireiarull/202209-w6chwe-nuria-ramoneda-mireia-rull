@@ -32,6 +32,15 @@ const robotsSlice = createSlice({
       ...currentRobotsState,
       list: currentRobotsState.list.concat(action.payload),
     }),
+    deleteOneRobot: (
+      currenRobotsState,
+      action: PayloadAction<Robot>
+    ): RobotsState => ({
+      ...currenRobotsState,
+      list: currenRobotsState.list.filter(
+        (robot) => robot._id !== action.payload._id
+      ),
+    }),
   },
 });
 
@@ -41,4 +50,5 @@ export const {
   loadRobots: loadRobotsActionCreator,
   loadOneRobot: loadOneRobotActionCreator,
   createOneRobot: createOneRobotActionCreator,
+  deleteOneRobot: deleteOneRobotActionCreator,
 } = robotsSlice.actions;

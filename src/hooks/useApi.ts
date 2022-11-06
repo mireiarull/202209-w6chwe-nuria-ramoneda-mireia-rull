@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useAppDispatch } from "../redux/hooks";
 import {
   createOneRobotActionCreator,
+  deleteOneRobotActionCreator,
   loadOneRobotActionCreator,
   loadRobotsActionCreator,
 } from "../redux/features/robots/robotsSlice";
@@ -62,10 +63,26 @@ const useApi = () => {
     [dispatch]
   );
 
+  const deleteOneRobotApi = useCallback(
+    async (id: string) => {
+      const response = await fetch(
+        `${url_local_api_robots}/robots/delete/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      const robotResultApi = await response.json();
+
+      dispatch(deleteOneRobotActionCreator(robotResultApi.robot));
+    },
+    [dispatch]
+  );
+
   return {
     loadRobotsApi,
     loadRobotByIdApi,
     createOneRobotApi,
+    deleteOneRobotApi,
   };
 };
 
