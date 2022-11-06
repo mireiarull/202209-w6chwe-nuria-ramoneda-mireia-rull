@@ -5,6 +5,7 @@ const FormPage = () => {
   return (
     <>
       <Header />
+      <h2>Create your robot</h2>
       <RobotForm />
     </>
   );
