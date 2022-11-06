@@ -5,6 +5,16 @@ interface RobotCardProps {
   robot: Robot;
 }
 
+const dateTransformer = (date: string) => {
+  const dateInString = String(date);
+  const year = dateInString.slice(0, 4);
+  const month = dateInString.slice(4, 6);
+  const day = dateInString.slice(6, 8);
+
+  const newDate = `${day}-${month}-${year}`;
+  return newDate;
+};
+
 const RobotCard = ({
   robot: {
     _id,
@@ -27,7 +37,7 @@ const RobotCard = ({
             <span>Endurance:</span> {endurance}
           </li>
           <li className="robot__date-creation">
-            <span>Creation date:</span> {creationDate}
+            <span>Creation date:</span> {dateTransformer(creationDate)}
           </li>
           <li className="robot__id">
             <span>Id:</span> {_id}
