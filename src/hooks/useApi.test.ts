@@ -2,6 +2,7 @@ import { renderHook } from "@testing-library/react";
 import { store } from "../redux/store";
 import ProviderWrapper from "../test-utils/ProviderWrapper";
 import useApi from "./useApi";
+import { mockOneRobot } from "../mocks/mockRobots";
 
 const dispatchSpy = jest.spyOn(store, "dispatch");
 
@@ -35,6 +36,22 @@ describe("Given the useApi custom hook", () => {
       });
 
       await loadRobotByIdApi(robotId);
+
+      expect(dispatchSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe("When its method createOneRobot is invoked", () => {
+    test("Then it should invoke dispatch with createOneRobot action creator and 1 new robot data", async () => {
+      const {
+        result: {
+          current: { createOneRobotApi },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: ProviderWrapper,
+      });
+
+      await createOneRobotApi(mockOneRobot);
 
       expect(dispatchSpy).toHaveBeenCalled();
     });
