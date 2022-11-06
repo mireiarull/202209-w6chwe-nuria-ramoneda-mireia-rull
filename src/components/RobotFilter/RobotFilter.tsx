@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useApi from "../../hooks/useApi";
+import { RobotFilterStyled } from "./RobotFilterStyled";
 
 const RobotFilter = (): JSX.Element => {
   const { loadRobotByIdApi } = useApi();
@@ -21,7 +22,7 @@ const RobotFilter = (): JSX.Element => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <RobotFilterStyled onSubmit={handleSubmit}>
         <label htmlFor="name">Find robot by its ID</label>
         <input
           type="text"
@@ -33,7 +34,7 @@ const RobotFilter = (): JSX.Element => {
           autoComplete="off"
         />
         <button type="submit">send</button>
-      </form>
+      </RobotFilterStyled>
     </>
   );
 };
