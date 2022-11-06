@@ -25,6 +25,13 @@ const robotsSlice = createSlice({
       ...currentRobotsState,
       list: [action.payload],
     }),
+    createOneRobot: (
+      currentRobotsState,
+      action: PayloadAction<Robot>
+    ): RobotsState => ({
+      ...currentRobotsState,
+      list: currentRobotsState.list.concat(action.payload),
+    }),
   },
 });
 
@@ -33,4 +40,5 @@ export const robotsReducer = robotsSlice.reducer;
 export const {
   loadRobots: loadRobotsActionCreator,
   loadOneRobot: loadOneRobotActionCreator,
+  createOneRobot: createOneRobotActionCreator,
 } = robotsSlice.actions;

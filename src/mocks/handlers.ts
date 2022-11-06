@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import mockGetResponse from "./mockGetResponse";
 
-const robotsApiUrl = process.env.REACT_APP_API_URL_LOCAL;
+const robotsApiUrl = process.env.REACT_APP_API_ROBOTS;
 
 const handlers = [
   rest.get(`${robotsApiUrl}/robots`, async (request, response, context) => {
