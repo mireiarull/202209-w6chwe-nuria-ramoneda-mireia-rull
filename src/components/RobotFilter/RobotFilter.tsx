@@ -24,7 +24,7 @@ const RobotFilter = (): JSX.Element => {
   return (
     <>
       <RobotFilterStyled onSubmit={handleSubmit}>
-        <label htmlFor="name">Find robot by its ID</label>
+        <label htmlFor="name">Find a robot by its ID</label>
         <input
           type="text"
           id="name"

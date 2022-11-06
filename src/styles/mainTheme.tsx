@@ -1,8 +1,8 @@
 const mainTheme = {
-  colorPrimary: "#6b559c",
+  colorPrimary: "#eae5f0",
   headerPaddingTop: "50px",
   bodyPaddingHorizontal: "30px",
-  backgroundColor: "#e6e5e8",
+  backgroundColor: "#4c3775",
 };
 
 export default mainTheme;

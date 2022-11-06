@@ -1,4 +1,4 @@
-import ButtonStyled from "./ButtonStyles";
+import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps {
   text: string;
