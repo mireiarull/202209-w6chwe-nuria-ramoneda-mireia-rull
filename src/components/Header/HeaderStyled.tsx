@@ -17,7 +17,23 @@ const HeaderStyled = styled.div`
     padding-top: 7px;
     text-transform: uppercase;
     color: ${(props) => props.theme.colorPrimary};
-    margin: 10px;
+    margin: 20px;
+  }
+
+  .header__nav {
+    display: flex;
+    flex: 1;
+    justify-content: right;
+    text-align: right;
+
+    &-item {
+      padding-bottom: 10px;
+    }
+
+    .active {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #4c3775;
+    }
   }
 `;
 
