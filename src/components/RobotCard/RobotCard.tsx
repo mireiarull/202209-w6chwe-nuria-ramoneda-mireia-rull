@@ -1,4 +1,5 @@
 import { Robot } from "../../types";
+import RobotCardStyled from "./RobotCardStyled";
 
 interface RobotCardProps {
   robot: Robot;
@@ -6,23 +7,34 @@ interface RobotCardProps {
 
 const RobotCard = ({ robot: robotObject }: RobotCardProps): JSX.Element => {
   const {
+    _id,
     name,
     image,
     features: { speed, endurance, creationDate },
   } = robotObject;
 
   return (
-    <article className="robot">
+    <RobotCardStyled className="robot">
       <h2 className="robot__name">{name}</h2>
-      <picture>
+      <div className="robot__inner">
         <img src={image} alt={name} />
-      </picture>
-      <ul className="robot__features">
-        <li className="robot__speed">Speed: {speed}</li>
-        <li className="robot__endurance">Endurance: {endurance}</li>
-        <li className="robot__date-creation">{creationDate}</li>
-      </ul>
-    </article>
+
+        <ul className="robot__features">
+          <li className="robot__speed">
+            <span>Speed:</span> {speed}
+          </li>
+          <li className="robot__endurance">
+            <span>Endurance:</span> {endurance}
+          </li>
+          <li className="robot__date-creation">
+            <span>Creation date:</span> {creationDate}
+          </li>
+          <li className="robot__id">
+            <span>Id:</span> {_id}
+          </li>
+        </ul>
+      </div>
+    </RobotCardStyled>
   );
 };
 

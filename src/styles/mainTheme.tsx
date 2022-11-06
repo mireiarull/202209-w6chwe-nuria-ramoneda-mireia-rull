@@ -3,6 +3,7 @@ const mainTheme = {
   headerPaddingTop: "50px",
   bodyPaddingHorizontal: "30px",
   backgroundColor: "#4c3775",
+  paddingShort: "20px",
 };
 
 export default mainTheme;
