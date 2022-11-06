@@ -8,7 +8,7 @@ export const mockRobotsList: Robot[] = [
     features: {
       speed: 1,
       endurance: 1,
-      creationDate: 1,
+      creationDate: "1",
     },
   },
   {
@@ -18,7 +18,7 @@ export const mockRobotsList: Robot[] = [
     features: {
       speed: 2,
       endurance: 2,
-      creationDate: 2,
+      creationDate: "2",
     },
   },
 ];
@@ -30,6 +30,6 @@ export const mockOneRobot: Robot = {
   features: {
     speed: 1,
     endurance: 1,
-    creationDate: 1,
+    creationDate: "1",
   },
 };

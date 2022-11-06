@@ -8,7 +8,7 @@ const mockGetResponse: Robot[] = [
     features: {
       speed: 1,
       endurance: 1,
-      creationDate: 1,
+      creationDate: "1",
     },
   },
   {
@@ -18,7 +18,7 @@ const mockGetResponse: Robot[] = [
     features: {
       speed: 2,
       endurance: 2,
-      creationDate: 2,
+      creationDate: "2",
     },
   },
 ];

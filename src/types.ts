@@ -5,6 +5,6 @@ export interface Robot {
   features: {
     speed: number;
     endurance: number;
-    creationDate: number;
+    creationDate: string;
   };
 }
