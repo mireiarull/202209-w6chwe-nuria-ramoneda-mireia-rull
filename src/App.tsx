@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Header from "./components/Header/Header";
 import RobotFilter from "./components/RobotFilter/RobotFilter";
 import RobotsList from "./components/RobotsList/RobotsList";
 import useApi from "./hooks/useApi";
@@ -12,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Robots</h1>
+      <Header />
       <RobotFilter />
       <RobotsList />
     </>
