@@ -1,5 +1,9 @@
-import mockRobotsList from "../../../mocks/mockRobotsList";
-import { loadRobotsActionCreator, robotsReducer } from "./robotsSlice";
+import { mockOneRobot, mockRobotsList } from "../../../mocks/mockRobots";
+import {
+  loadOneRobotActionCreator,
+  loadRobotsActionCreator,
+  robotsReducer,
+} from "./robotsSlice";
 
 describe("Given a function robotsReducer", () => {
   describe("When it's invoked with an empty state and an empty type", () => {
@@ -30,6 +34,23 @@ describe("Given a function robotsReducer", () => {
         loadTwoRobotsAction
       );
       const expectedRobotsState = { list: mockRobotsList };
+
+      expect(newRobotsState).toStrictEqual(expectedRobotsState);
+    });
+  });
+
+  describe("When the loadOneRobotActionCreator is invoked with an empty current state and one robot", () => {
+    test("Then it should return a new state with the robot", () => {
+      const currentEmptyState = {
+        list: [],
+      };
+      const loadOneRobotAction = loadOneRobotActionCreator(mockOneRobot);
+
+      const newRobotsState = robotsReducer(
+        currentEmptyState,
+        loadOneRobotAction
+      );
+      const expectedRobotsState = { list: [mockOneRobot] };
 
       expect(newRobotsState).toStrictEqual(expectedRobotsState);
     });

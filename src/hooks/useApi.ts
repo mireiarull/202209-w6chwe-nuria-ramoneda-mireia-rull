@@ -1,7 +1,9 @@
 import { useCallback } from "react";
 import { useAppDispatch } from "../redux/hooks";
-import { ApiRobot } from "../types";
-import { loadRobotsActionCreator } from "../redux/features/robots/robotsSlice";
+import {
+  loadOneRobotActionCreator,
+  loadRobotsActionCreator,
+} from "../redux/features/robots/robotsSlice";
 
 const { REACT_APP_API_URL_LOCAL: url_local_api_robots } = process.env;
 
@@ -10,13 +12,24 @@ const useApi = () => {
 
   const loadRobotsApi = useCallback(async () => {
     const response = await fetch(`${url_local_api_robots}/robots`);
-    const robotsApi: ApiRobot = await response.json();
+    const robotResultApi = await response.json();
 
-    dispatch(loadRobotsActionCreator(robotsApi.robots));
+    dispatch(loadRobotsActionCreator(robotResultApi.robots));
   }, [dispatch]);
+
+  const loadRobotByIdApi = useCallback(
+    async (id: string) => {
+      const response = await fetch(`${url_local_api_robots}/robots/${id}`);
+      const robotResultApi = await response.json();
+
+      dispatch(loadOneRobotActionCreator(robotResultApi.robot));
+    },
+    [dispatch]
+  );
 
   return {
     loadRobotsApi,
+    loadRobotByIdApi,
   };
 };
 
