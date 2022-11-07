@@ -77,48 +77,50 @@ const RobotForm = (): JSX.Element => {
             required
           />
         </div>
-        <span>Features: </span>
-        <div className="form__item">
-          <label className="form__label" htmlFor="speed">
-            Speed
-          </label>
-          <input
-            type="number"
-            name="speed"
-            id="speed"
-            onChange={handleFormChange}
-            autoComplete="off"
-            required
-          />
-        </div>
-        <div className="form__item">
-          <label className="form__label" htmlFor="endurance">
-            Endurance
-          </label>
-          <input
-            type="number"
-            name="endurance"
-            id="endurance"
-            onChange={handleFormChange}
-            autoComplete="off"
-            required
-          />
-        </div>
-        <div className="form__item">
-          <label className="form__label" htmlFor="creationDate">
-            Creation Date
-          </label>
-          <input
-            type="date"
-            name="creationDate"
-            id="creationDate"
-            onChange={handleFormChange}
-            autoComplete="off"
-            required
-          />
-        </div>
+        <fieldset>
+          <legend>Features: </legend>
+          <div className="form__item">
+            <label className="form__label" htmlFor="speed">
+              Speed
+            </label>
+            <input
+              type="number"
+              name="speed"
+              id="speed"
+              onChange={handleFormChange}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="form__item">
+            <label className="form__label" htmlFor="endurance">
+              Endurance
+            </label>
+            <input
+              type="number"
+              name="endurance"
+              id="endurance"
+              onChange={handleFormChange}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="form__item">
+            <label className="form__label" htmlFor="creationDate">
+              Creation Date
+            </label>
+            <input
+              type="date"
+              name="creationDate"
+              id="creationDate"
+              onChange={handleFormChange}
+              autoComplete="off"
+              required
+            />
+          </div>
+        </fieldset>
 
-        <Button text="send" action={() => {}}></Button>
+        <Button text="Create" action={() => {}}></Button>
       </RobotFormStyled>
     </>
   );
