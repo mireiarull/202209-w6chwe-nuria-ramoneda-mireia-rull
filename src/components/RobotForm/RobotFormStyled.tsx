@@ -6,6 +6,7 @@ const RobotFormStyled = styled.form`
   align-items: center;
   margin: 20px auto;
   width: 80%;
+  max-width: 600px;
 
   .form__label {
     font-weight: 400;
