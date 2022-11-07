@@ -24,13 +24,11 @@ const RobotCard = ({
         <div className="robot__buttons-wrapper">
           <Button
             text="Delete"
-            content="icon"
             classCss="button__icon button__icon--delete"
             action={() => deleteOneRobotApi(_id)}
           />
           <Button
             text="Edit"
-            content="icon"
             classCss="button__icon button__icon--edit"
             action={() => {}}
           />

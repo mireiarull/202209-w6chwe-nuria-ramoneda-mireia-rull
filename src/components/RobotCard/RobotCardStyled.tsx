@@ -3,11 +3,6 @@ import deleteIcon from "../../styles/icons/delete_icon.svg";
 import editIcon from "../../styles/icons/edit_icon.svg";
 
 const RobotCardStyled = styled.article`
-  img {
-    aspect-ratio: 1;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
   .robot__icon {
     width: 50px;
     g {
@@ -29,9 +24,20 @@ const RobotCardStyled = styled.article`
     margin-bottom: ${(props) => props.theme.bodyPaddingHorizontal};
     margin-top: 15px;
     border-top: 1px dotted #7a7a7a;
-    border-right: 1px dotted #7a7a7a;
+
+    img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      margin-bottom: 10px;
+
+      width: 100%;
+      height: auto;
+    }
   }
-  .robot__buttons-wrapper {
+  @media screen and (min-width: 890px) {
+    .robot__inner {
+      border-right: 1px dotted #7a7a7a;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -40,6 +46,14 @@ const RobotCardStyled = styled.article`
       gap: 20px;
       img {
         width: 150px;
+      }
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    .robot__inner {
+      img {
+        width: 200px;
+        height: 200px;
       }
     }
   }
@@ -68,14 +82,17 @@ const RobotCardStyled = styled.article`
       brightness(102%) contrast(102%);
     &--delete {
       background: url(${deleteIcon});
+      &:hover,
+      &:focus {
+        filter: invert(18%) sepia(48%) saturate(5575%) hue-rotate(346deg)
+          brightness(90%) contrast(87%);
+      }
     }
     &--edit {
       background-image: url(${editIcon});
-    }
-    &:hover,
-    &:focus {
-      filter: invert(18%) sepia(48%) saturate(5575%) hue-rotate(346deg)
-        brightness(90%) contrast(87%);
+      filter: invert(87%) sepia(0%) saturate(1862%) hue-rotate(226deg)
+        brightness(99%) contrast(83%);
+      cursor: auto;
     }
   }
 `;
