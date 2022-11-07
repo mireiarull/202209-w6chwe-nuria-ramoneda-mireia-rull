@@ -19,6 +19,9 @@ const RobotFormStyled = styled.form`
   span {
     margin-top: 10px;
   }
+  fieldset {
+    width: 100%;
+  }
   legend {
     text-align: center;
   }
