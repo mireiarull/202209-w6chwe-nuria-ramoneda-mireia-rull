@@ -80,10 +80,11 @@ const useApi = () => {
   );
 
   const updateOneRobotApi = useCallback(
-    async (robot: Robot) => {
-      const response = await fetch(`${url_local_api_robots}/robots/update/`, {
+    async (robot: Robot, id: string) => {
+      const response = await fetch(`${url_local_api_robots}/robots/update`, {
         method: "PUT",
         body: JSON.stringify({
+          _id: id,
           name: robot.name,
           image: robot.image,
           features: {
@@ -99,7 +100,7 @@ const useApi = () => {
 
       const robotResultApi = await response.json();
 
-      dispatch(updateOneRobotActionCreator(robotResultApi.robot));
+      dispatch(updateOneRobotActionCreator(robotResultApi));
     },
     [dispatch]
   );
