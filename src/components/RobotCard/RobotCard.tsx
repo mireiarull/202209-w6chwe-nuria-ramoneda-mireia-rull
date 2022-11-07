@@ -2,6 +2,7 @@ import useApi from "../../hooks/useApi";
 import { Robot } from "../../types";
 import Button from "../Button/Button";
 import RobotCardStyled from "./RobotCardStyled";
+import { Link } from "react-router-dom";
 
 interface RobotCardProps {
   robot: Robot;
@@ -37,11 +38,15 @@ const RobotCard = ({
             classCss="button__icon button__icon--delete"
             action={() => deleteOneRobotApi(_id)}
           />
-          <Button
+          {/*  <Button
             text="Edit"
             classCss="button__icon button__icon--edit"
             action={() => {}}
-          />
+          /> */}
+          <Link
+            className="button button__icon button__icon--edit"
+            to={`/create/${_id}`}
+          ></Link>
         </div>
       </div>
       <div className="robot__inner">

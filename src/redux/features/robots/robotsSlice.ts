@@ -41,6 +41,22 @@ const robotsSlice = createSlice({
         (robot) => robot._id !== action.payload._id
       ),
     }),
+    updateOneRobot: (
+      currentRobotState,
+      action: PayloadAction<Robot>
+    ): RobotsState => ({
+      ...currentRobotState,
+      list: currentRobotState.list.map((robot) => {
+        if (robot._id === action.payload._id) {
+          return {
+            ...robot,
+            ...action.payload,
+          };
+        } else {
+          return robot;
+        }
+      }),
+    }),
   },
 });
 
@@ -51,4 +67,5 @@ export const {
   loadOneRobot: loadOneRobotActionCreator,
   createOneRobot: createOneRobotActionCreator,
   deleteOneRobot: deleteOneRobotActionCreator,
+  updateOneRobot: updateOneRobotActionCreator,
 } = robotsSlice.actions;

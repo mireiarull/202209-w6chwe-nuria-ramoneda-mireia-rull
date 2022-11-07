@@ -90,9 +90,6 @@ const RobotCardStyled = styled.article`
     }
     &--edit {
       background-image: url(${editIcon});
-      filter: invert(87%) sepia(0%) saturate(1862%) hue-rotate(226deg)
-        brightness(99%) contrast(83%);
-      cursor: auto;
     }
   }
 `;
