@@ -34,7 +34,7 @@ const RobotFilter = (): JSX.Element => {
           onChange={handleFormChange}
           autoComplete="off"
         />
-        <Button text="send" action={() => {}}></Button>
+        <Button text="Find" action={() => {}}></Button>
       </RobotFilterStyled>
     </>
   );

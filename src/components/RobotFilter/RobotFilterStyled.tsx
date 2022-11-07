@@ -3,12 +3,10 @@ import "@fontsource/orbitron";
 
 export const RobotFilterStyled = styled.form`
   display: flex;
-  flex-direction: column;
   color: ${(props) => props.theme.colorPrimary};
   justify-content: flex-start;
   font-size: 1.5rem;
   align-items: center;
-  width: 50%;
   min-width: 300px;
   padding: 15px;
   display: flex;
@@ -36,6 +34,21 @@ export const RobotFilterStyled = styled.form`
       font-size: 1rem;
       color: #e8e8e8;
       font-weight: 400;
+    }
+  }
+  @media screen and (min-width: 890px) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    width: 76%;
+    label {
+      font-size: 1.3rem;
+    }
+    input {
+      width: 350px;
     }
   }
 `;
