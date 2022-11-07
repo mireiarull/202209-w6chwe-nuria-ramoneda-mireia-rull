@@ -5,6 +5,7 @@ import {
   deleteOneRobotActionCreator,
   loadOneRobotActionCreator,
   loadRobotsActionCreator,
+  updateOneRobotActionCreator,
 } from "../redux/features/robots/robotsSlice";
 import { Robot } from "../types";
 
@@ -78,11 +79,37 @@ const useApi = () => {
     [dispatch]
   );
 
+  const updateOneRobotApi = useCallback(
+    async (robot: Robot) => {
+      const response = await fetch(`${url_local_api_robots}/robots/update/`, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: robot.name,
+          image: robot.image,
+          features: {
+            speed: robot.features.speed,
+            endurance: robot.features.endurance,
+            creationDate: robot.features.creationDate.replaceAll("-", ""),
+          },
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+
+      const robotResultApi = await response.json();
+
+      dispatch(updateOneRobotActionCreator(robotResultApi.robot));
+    },
+    [dispatch]
+  );
+
   return {
     loadRobotsApi,
     loadRobotByIdApi,
     createOneRobotApi,
     deleteOneRobotApi,
+    updateOneRobotApi,
   };
 };
 
