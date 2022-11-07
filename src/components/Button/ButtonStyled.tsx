@@ -8,10 +8,11 @@ const ButtonStyled = styled.button`
   border-radius: 5px;
   margin: 20px;
   font-size: 1.25rem;
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     color: ${(props) => props.theme.colorPrimary};
-    background-color: ${(props) => props.theme.backgroundColor};
+    background-color: ${(props) => props.theme.featuredColor};
     font-weight: bold;
   }
 `;

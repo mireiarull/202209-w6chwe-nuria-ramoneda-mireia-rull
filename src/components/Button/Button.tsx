@@ -16,8 +16,16 @@ const Button = ({
   if (text === "Delete" || text === "Edit") {
     text = "";
   }
+  let disabled = false;
+  if (text === "Edit") {
+    disabled = true;
+  }
   return (
-    <ButtonStyled className={`button ${classCss}`} onClick={action}>
+    <ButtonStyled
+      disabled={disabled}
+      className={`button ${classCss}`}
+      onClick={action}
+    >
       {text}
     </ButtonStyled>
   );
