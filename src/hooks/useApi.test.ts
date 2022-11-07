@@ -56,4 +56,20 @@ describe("Given the useApi custom hook", () => {
       expect(dispatchSpy).toHaveBeenCalled();
     });
   });
+
+  describe("When its method deleteOneRobot is invoked", () => {
+    test("Then it should invoke dispatch with deleteOneRobot action creator and remove the robot", async () => {
+      const {
+        result: {
+          current: { deleteOneRobotApi },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: ProviderWrapper,
+      });
+
+      await deleteOneRobotApi(mockOneRobot._id);
+
+      expect(dispatchSpy).toHaveBeenCalled();
+    });
+  });
 });

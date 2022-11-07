@@ -1,6 +1,7 @@
 import { mockOneRobot, mockRobotsList } from "../../../mocks/mockRobots";
 import {
   createOneRobotActionCreator,
+  deleteOneRobotActionCreator,
   loadOneRobotActionCreator,
   loadRobotsActionCreator,
   robotsReducer,
@@ -58,7 +59,7 @@ describe("Given a function robotsReducer", () => {
   });
 
   describe("When the createOneRobotActionCreatot is invoked with a current empty state and a new one robot", () => {
-    test("Then it should return a new state with the current state plus the new robot", () => {
+    test("Then it should return a new state with the new robot added", () => {
       const currentEmptyState = {
         list: [],
       };
@@ -69,6 +70,26 @@ describe("Given a function robotsReducer", () => {
         createOneRobotAction
       );
       const expectedRobotsState = { list: [mockOneRobot] };
+
+      expect(newRobotsState).toStrictEqual(expectedRobotsState);
+    });
+  });
+
+  describe("When the deleteOneRobotAcionCreator is invoked with the current state and an id of a robot to delete", () => {
+    test("Then it should return a new state without the robot to delete", () => {
+      const currentRobotsState = {
+        list: mockRobotsList,
+      };
+      const idToDelete = "2";
+
+      const expectedRobotsState = {
+        list: mockRobotsList.filter((robot) => robot._id !== idToDelete),
+      };
+      console.log(expectedRobotsState);
+      const newRobotsState = robotsReducer(
+        currentRobotsState,
+        deleteOneRobotActionCreator(mockRobotsList[1])
+      );
 
       expect(newRobotsState).toStrictEqual(expectedRobotsState);
     });
