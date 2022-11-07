@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import "@fontsource/orbitron";
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled.header`
   color: ${(props) => props.theme.colorPrimary};
   display: flex;
   align-items: center;
   padding-bottom: 10px;
   font-family: "Orbitron";
   font-weight: 600;
-  border-bottom: 2.5px solid #4c3775;
+  border-bottom: 2.5px solid ${(props) => props.theme.featuredColor};
   img {
     height: 50px;
   }

@@ -6,8 +6,11 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <RobotFilter />
-      <RobotsList />
+      <main className="container">
+        <h2>Robots List</h2>
+        <RobotFilter />
+        <RobotsList />
+      </main>
     </>
   );
 };

@@ -4,17 +4,23 @@ const RobotFormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px auto;
+  width: 80%;
+
   .form__label {
     font-weight: 400;
   }
   .form__item {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
+    padding-bottom: 5px;
   }
   span {
     margin-top: 10px;
+  }
+  legend {
+    text-align: center;
   }
 
   .button {

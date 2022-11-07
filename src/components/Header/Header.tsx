@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = (): JSX.Element => {
   return (
-    <HeaderStyled>
+    <HeaderStyled className="container">
       <img src={logo} alt={"Robot icon"} />
       <h1>Robots</h1>
       <nav className="header__nav">
