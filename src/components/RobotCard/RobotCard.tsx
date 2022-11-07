@@ -47,6 +47,10 @@ const RobotCard = ({
             className="button button__icon button__icon--edit"
             to={`/create/${_id}`}
           ></Link>
+          {/* <Link
+            className="button button__icon button__icon--edit"
+            to={`/create`}
+          ></Link> */}
         </div>
       </div>
       <div className="robot__inner">

@@ -85,7 +85,7 @@ describe("Given a function robotsReducer", () => {
       const expectedRobotsState = {
         list: mockRobotsList.filter((robot) => robot._id !== idToDelete),
       };
-      console.log(expectedRobotsState);
+
       const newRobotsState = robotsReducer(
         currentRobotsState,
         deleteOneRobotActionCreator(mockRobotsList[1])

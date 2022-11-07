@@ -3,11 +3,13 @@ import useApi from "../../hooks/useApi";
 import { Robot } from "../../types";
 import Button from "../Button/Button";
 import RobotFormStyled from "./RobotFormStyled";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const RobotForm = (): JSX.Element => {
-  const { createOneRobotApi } = useApi();
+  const { createOneRobotApi, updateOneRobotApi } = useApi();
   const navigate = useNavigate();
+
+  const { id } = useParams<"id">();
 
   const intialFormData = {
     name: "",
@@ -44,12 +46,19 @@ const RobotForm = (): JSX.Element => {
         creationDate: formData.creationDate,
       },
     };
-    createOneRobotApi(formDataToSubmit as Robot);
+    if (!id) {
+      createOneRobotApi(formDataToSubmit as Robot);
+    } else {
+      updateOneRobotApi(formDataToSubmit as Robot, id);
+    }
+
     navigate("/home");
   };
 
   return (
     <>
+      {!id && <h2>Create your robot</h2>}
+      {id && <h2>Modify your robot</h2>}
       <RobotFormStyled onSubmit={(event) => handleSubmit(event)}>
         <div className="form__item">
           <label className="form__label" htmlFor="name">
@@ -77,50 +86,49 @@ const RobotForm = (): JSX.Element => {
             required
           />
         </div>
-        <fieldset>
-          <legend>Features: </legend>
-          <div className="form__item">
-            <label className="form__label" htmlFor="speed">
-              Speed
-            </label>
-            <input
-              type="number"
-              name="speed"
-              id="speed"
-              onChange={handleFormChange}
-              autoComplete="off"
-              required
-            />
-          </div>
-          <div className="form__item">
-            <label className="form__label" htmlFor="endurance">
-              Endurance
-            </label>
-            <input
-              type="number"
-              name="endurance"
-              id="endurance"
-              onChange={handleFormChange}
-              autoComplete="off"
-              required
-            />
-          </div>
-          <div className="form__item">
-            <label className="form__label" htmlFor="creationDate">
-              Creation Date
-            </label>
-            <input
-              type="date"
-              name="creationDate"
-              id="creationDate"
-              onChange={handleFormChange}
-              autoComplete="off"
-              required
-            />
-          </div>
-        </fieldset>
+        <span>Features: </span>
+        <div className="form__item">
+          <label className="form__label" htmlFor="speed">
+            Speed
+          </label>
+          <input
+            type="number"
+            name="speed"
+            id="speed"
+            onChange={handleFormChange}
+            autoComplete="off"
+            required
+          />
+        </div>
+        <div className="form__item">
+          <label className="form__label" htmlFor="endurance">
+            Endurance
+          </label>
+          <input
+            type="number"
+            name="endurance"
+            id="endurance"
+            onChange={handleFormChange}
+            autoComplete="off"
+            required
+          />
+        </div>
+        <div className="form__item">
+          <label className="form__label" htmlFor="creationDate">
+            Creation Date
+          </label>
+          <input
+            type="date"
+            name="creationDate"
+            id="creationDate"
+            onChange={handleFormChange}
+            autoComplete="off"
+            required
+          />
+        </div>
 
-        <Button text="Create" action={() => {}}></Button>
+        {id && <Button text="Modify" action={() => {}}></Button>}
+        {!id && <Button text="Create" action={() => {}}></Button>}
       </RobotFormStyled>
     </>
   );
